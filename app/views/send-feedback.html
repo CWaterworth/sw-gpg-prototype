@@ -17,8 +17,15 @@
 
       <form class="form" action="/url/of/next/page" method="post">
 
+        {% set otherInput %}
+        {{ govukTextarea({
+      name: "more-detail",
+      id: "more-detail"
+    }) }}
+        {% endset -%}
+
         {{ govukRadios({
-  classes: "govuk-radios--small",
+
   idPrefix: "changed-name",
   name: "changed-name",
   fieldset: {
@@ -53,9 +60,9 @@
   ]
   }) }}
 
-  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
-{{ govukCheckboxes({
+        {{ govukCheckboxes({
   idPrefix: "waste",
   name: "waste",
   fieldset: {
@@ -103,16 +110,19 @@
     },
     {
       value: "farm",
-      text: "Other"
+      text: "Other",
+      conditional: {
+        html: otherInput
+      }
     }
     
   ]
   
 }) }}
 
-  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
-{{ govukCheckboxes({
+        {{ govukCheckboxes({
   idPrefix: "waste",
   name: "waste",
   fieldset: {
@@ -148,16 +158,17 @@
     },
     {
       value: "farm",
-      text: "Other"
+      text: "Other",
+      conditional: {
+        html: otherInput
+      }
     }
     
   ]
 
   }) }}
 
-  {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-{{ govukRadios({
+        {{ govukCheckboxes({
   idPrefix: "where-do-you-live",
   name: "where-do-you-live",
   fieldset: {
@@ -189,29 +200,29 @@
       text: "A person interested in a specific organisation’s gender pay gap?"
     },
     {
-      value: "northern-ireland",
-      text: "Other"
+      value: "areYouOther",
+      text: "Other",
+      conditional: {
+        html: otherInput
+      }
     }
-  ]
-
-  
+  ]  
 }) }}
 
-  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        <div class="govuk-form-group">
+          <h1 class="govuk-heading-m" for="more-detail">
+          Please take a moment to tell us about your experience, what worked and what didn’t?
+        </h1>
 
-{{ govukCheckboxes({
-  idPrefix: "waste",
-  name: "waste",
-  fieldset: {
-    legend: {
-      text: "Please take a moment to tell us about your experience, what worked and what didn’t?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-]
-}) }}
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </div>
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <div class="govuk-inset-text">
+        If you are having difficulties with the gender pay gap reporting service please email 
+        <a href="#" class="govuk-link">gpg.reporting@cabinetoffice.gov.uk</a> so that we can get back to you quickly
+      </div>
+
+        <button class="govuk-button" data-module="govuk-button">Submit</button>
 
       </form>
 
