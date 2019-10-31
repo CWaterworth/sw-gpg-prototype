@@ -49,11 +49,167 @@
       value: "veryDifficult",
       text: "Very Difficult"
     }
+    
   ]
+  }) }}
+
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  idPrefix: "waste",
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: "How did you hear about the gender pay gap service?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      value: "carcasses",
+      text: "News article"
+    },
+    {
+      value: "mines",
+      text: "Social media"
+    },
+    {
+      value: "farm",
+      text: "Company intranet"
+    },
+    {
+      value: "farm",
+      text: "Employer union"
+    },
+    {
+      value: "farm",
+      text: "Internet search for a company"
+    },
+    {
+      value: "farm",
+      text: "Charity"
+    },
+    {
+      value: "farm",
+      text: "Lobby group"
+    },
+    {
+      value: "farm",
+      text: "By having to reporting gender pay gap data"
+    },
+    {
+      value: "farm",
+      text: "Other"
+    }
+    
+  ]
+  
 }) }}
 
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
-        <p>[See <a href="https://design-system.service.gov.uk">the GOV.UK Design System</a> for examples]</p>
+{{ govukCheckboxes({
+  idPrefix: "waste",
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: "Why have you visited the site?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      value: "carcasses",
+      text: "I wanted to find out what the gender pay gap is"
+    },
+    {
+      value: "mines",
+      text: "I reported my organisation's gender pay gap data"
+    },
+    {
+      value: "farm",
+      text: "I wanted to understand how I can close my organisation's gender pay gap"
+    },
+    {
+      value: "farm",
+      text: "I viewed a specific organisation's gender pay gap"
+    },
+    {
+      value: "farm",
+      text: "I wanted to know what action other organisations are taking to close the gender pay gap"
+    },
+    {
+      value: "farm",
+      text: "Other"
+    }
+    
+  ]
+
+  }) }}
+
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "where-do-you-live",
+  name: "where-do-you-live",
+  fieldset: {
+    legend: {
+      text: "Are you",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "england",
+      text: "An employee interested in your organisation’s gender pay gap data?"
+    },
+    {
+      value: "scotland",
+      text: "A manager involved in gender pay gap reporting or diversity and inclusion?"
+    },
+    {
+      value: "wales",
+      text: "A person responsible for reporting your organisation’s gender pay gap?"
+    },
+    {
+      value: "northern-ireland",
+      text: "A person interested in the gender pay gap generally?"
+    },
+    {
+      value: "northern-ireland",
+      text: "A person interested in a specific organisation’s gender pay gap?"
+    },
+    {
+      value: "northern-ireland",
+      text: "Other"
+    }
+  ]
+
+  
+}) }}
+
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  idPrefix: "waste",
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: "Please take a moment to tell us about your experience, what worked and what didn’t?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+]
+}) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
